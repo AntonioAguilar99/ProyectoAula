@@ -1,0 +1,324 @@
+package Formulario;
+
+import java.awt.Color;
+
+
+public class InicioSesion extends javax.swing.JFrame {
+
+
+    int Xmouse, Ymouse;
+    public InicioSesion() {
+        initComponents();
+    }
+
+
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        Background = new javax.swing.JPanel();
+        Logo = new javax.swing.JLabel();
+        NombreEmpresa = new javax.swing.JLabel();
+        Favicon = new javax.swing.JLabel();
+        City = new javax.swing.JLabel();
+        Header = new javax.swing.JPanel();
+        Exitbtn = new javax.swing.JPanel();
+        ExitTxt = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        Userlabel = new javax.swing.JLabel();
+        UserTxt = new javax.swing.JTextField();
+        jSeparator1 = new javax.swing.JSeparator();
+        Passwordlabel = new javax.swing.JLabel();
+        jSeparator2 = new javax.swing.JSeparator();
+        PassTxt = new javax.swing.JPasswordField();
+        EntrarBtn = new javax.swing.JPanel();
+        EntrarbtnTxt = new javax.swing.JLabel();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocationByPlatform(true);
+        setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(800, 500));
+        setResizable(false);
+
+        Background.setBackground(new java.awt.Color(255, 255, 255));
+        Background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        Logo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/logo.png"))); // NOI18N
+        Background.add(Logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 40, 290, 190));
+
+        NombreEmpresa.setBackground(new java.awt.Color(240, 240, 240));
+        NombreEmpresa.setFont(new java.awt.Font("Roboto Medium", 0, 24)); // NOI18N
+        NombreEmpresa.setForeground(new java.awt.Color(255, 255, 255));
+        NombreEmpresa.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        NombreEmpresa.setText("Med Eps");
+        Background.add(NombreEmpresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 220, 290, 40));
+
+        Favicon.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
+        Favicon.setForeground(new java.awt.Color(0, 0, 0));
+        Favicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/favicon.png"))); // NOI18N
+        Favicon.setText("LOGO ");
+        Background.add(Favicon, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 150, 60));
+
+        City.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/city.png"))); // NOI18N
+        Background.add(City, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 0, 290, 500));
+
+        Header.setBackground(new java.awt.Color(255, 255, 255));
+        Header.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                HeaderMouseDragged(evt);
+            }
+        });
+        Header.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                HeaderMousePressed(evt);
+            }
+        });
+
+        Exitbtn.setBackground(new java.awt.Color(255, 255, 255));
+        Exitbtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        ExitTxt.setBackground(new java.awt.Color(0, 0, 0));
+        ExitTxt.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
+        ExitTxt.setForeground(new java.awt.Color(0, 0, 0));
+        ExitTxt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        ExitTxt.setText("X");
+        ExitTxt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        ExitTxt.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ExitTxtMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                ExitTxtMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                ExitTxtMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                ExitTxtMousePressed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout ExitbtnLayout = new javax.swing.GroupLayout(Exitbtn);
+        Exitbtn.setLayout(ExitbtnLayout);
+        ExitbtnLayout.setHorizontalGroup(
+            ExitbtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(ExitTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
+        );
+        ExitbtnLayout.setVerticalGroup(
+            ExitbtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ExitbtnLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(ExitTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        javax.swing.GroupLayout HeaderLayout = new javax.swing.GroupLayout(Header);
+        Header.setLayout(HeaderLayout);
+        HeaderLayout.setHorizontalGroup(
+            HeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(HeaderLayout.createSequentialGroup()
+                .addComponent(Exitbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 730, Short.MAX_VALUE))
+        );
+        HeaderLayout.setVerticalGroup(
+            HeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(HeaderLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(Exitbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        Background.add(Header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 40));
+
+        jLabel1.setFont(new java.awt.Font("Roboto Medium", 0, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("INICIAR SESION");
+        Background.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, -1));
+
+        Userlabel.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
+        Userlabel.setForeground(new java.awt.Color(0, 0, 0));
+        Userlabel.setText("USUARIO");
+        Background.add(Userlabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, -1, -1));
+
+        UserTxt.setForeground(new java.awt.Color(153, 153, 153));
+        UserTxt.setText("Ingrese su nombre de usuario");
+        UserTxt.setBorder(null);
+        UserTxt.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                UserTxtMousePressed(evt);
+            }
+        });
+        Background.add(UserTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 350, 30));
+        Background.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 390, 10));
+
+        Passwordlabel.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
+        Passwordlabel.setForeground(new java.awt.Color(0, 0, 0));
+        Passwordlabel.setText("CONTRASEÑA");
+        Background.add(Passwordlabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, -1, -1));
+        Background.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 390, -1));
+
+        PassTxt.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        PassTxt.setForeground(new java.awt.Color(153, 153, 153));
+        PassTxt.setText("********");
+        PassTxt.setBorder(null);
+        PassTxt.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                PassTxtMousePressed(evt);
+            }
+        });
+        Background.add(PassTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 350, 30));
+
+        EntrarBtn.setBackground(new java.awt.Color(0, 134, 190));
+
+        EntrarbtnTxt.setBackground(new java.awt.Color(0, 134, 190));
+        EntrarbtnTxt.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
+        EntrarbtnTxt.setForeground(new java.awt.Color(0, 0, 0));
+        EntrarbtnTxt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        EntrarbtnTxt.setText("ENTRAR");
+        EntrarbtnTxt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        EntrarbtnTxt.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                EntrarbtnTxtMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                EntrarbtnTxtMouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout EntrarBtnLayout = new javax.swing.GroupLayout(EntrarBtn);
+        EntrarBtn.setLayout(EntrarBtnLayout);
+        EntrarBtnLayout.setHorizontalGroup(
+            EntrarBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EntrarBtnLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(EntrarbtnTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        EntrarBtnLayout.setVerticalGroup(
+            EntrarBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EntrarBtnLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(EntrarbtnTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        Background.add(EntrarBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, 110, 40));
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void HeaderMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HeaderMousePressed
+        Xmouse = evt.getX();
+        Ymouse = evt.getY();
+    }//GEN-LAST:event_HeaderMousePressed
+
+    private void HeaderMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HeaderMouseDragged
+        int x = evt.getXOnScreen();
+        int y = evt.getYOnScreen();
+        this.setLocation(x - Xmouse, y - Ymouse);
+    }//GEN-LAST:event_HeaderMouseDragged
+
+    private void ExitTxtMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExitTxtMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ExitTxtMousePressed
+
+    private void ExitTxtMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExitTxtMouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_ExitTxtMouseClicked
+
+    private void ExitTxtMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExitTxtMouseEntered
+       Exitbtn.setBackground(Color.red);
+       ExitTxt.setForeground(Color.white);
+    }//GEN-LAST:event_ExitTxtMouseEntered
+
+    private void ExitTxtMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExitTxtMouseExited
+        Exitbtn.setBackground(Color.white);
+        ExitTxt.setForeground(Color.black);
+    }//GEN-LAST:event_ExitTxtMouseExited
+
+    private void EntrarbtnTxtMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EntrarbtnTxtMouseEntered
+        EntrarBtn.setBackground(new Color(0, 156, 233));
+    }//GEN-LAST:event_EntrarbtnTxtMouseEntered
+
+    private void EntrarbtnTxtMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EntrarbtnTxtMouseExited
+        EntrarBtn.setBackground(new Color(0, 134, 190));
+    }//GEN-LAST:event_EntrarbtnTxtMouseExited
+
+    private void UserTxtMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_UserTxtMousePressed
+        UserTxt.setText("");
+        UserTxt.setForeground(Color.black);
+        PassTxt.setText("********");
+        PassTxt.setForeground(Color.gray);
+    }//GEN-LAST:event_UserTxtMousePressed
+
+    private void PassTxtMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PassTxtMousePressed
+        UserTxt.setText("Ingrese su nombre de usuario");
+        UserTxt.setForeground(Color.gray);
+        PassTxt.setText("");
+        PassTxt.setForeground(Color.black);
+    }//GEN-LAST:event_PassTxtMousePressed
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(InicioSesion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(InicioSesion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(InicioSesion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(InicioSesion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new InicioSesion().setVisible(true);
+            }
+        });
+    }
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel Background;
+    private javax.swing.JLabel City;
+    private javax.swing.JPanel EntrarBtn;
+    private javax.swing.JLabel EntrarbtnTxt;
+    private javax.swing.JLabel ExitTxt;
+    private javax.swing.JPanel Exitbtn;
+    private javax.swing.JLabel Favicon;
+    private javax.swing.JPanel Header;
+    private javax.swing.JLabel Logo;
+    private javax.swing.JLabel NombreEmpresa;
+    private javax.swing.JPasswordField PassTxt;
+    private javax.swing.JLabel Passwordlabel;
+    private javax.swing.JTextField UserTxt;
+    private javax.swing.JLabel Userlabel;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    // End of variables declaration//GEN-END:variables
+}
