@@ -1,0 +1,142 @@
+@startuml
+class Usuario {
+    - String nombre;
+    - String documento;
+    - String correo;
+    - String contraseña;
+    - String telefono;
+    - String apellidos;
+    - String tipoDocumento;
+    - String direccion;
+    - Date fechaNacimiento;
+    - String genero;
+    - boolean activo;
+    - String telefono;
+    + iniciarSesion(String correo, String contraseña);
+    + cerrarSesion();
+    + actualizarDatos(String nombre, String correo, String telefono);
+}
+
+class Paciente {
+    - HistoriaClinica historiaClinica;
+    - List<Cita> citasSolicitadas;
+    + solicitarCita(Doctor doctor, String fecha, String motivo);
+    + cancelarCita(int id);
+    + verHistorialMedico();
+    + actualizarDatosMedicos(String datos);
+}
+
+class HistoriaClinica {
+    - String id;
+    - List<String> diagnosticos;
+    - List<String> tratamientos;
+    - List<String> alergias;
+    - List<String> antecedentesFamiliares;
+    + agregarDiagnostico(String diagnostico);
+    + agregarTratamiento(String tratamiento);
+    + agregarAlergia(String alergia);
+    + agregarAntecedente(String antecedente);
+}
+
+class Doctor {
+    - String nombre;
+    - String documento;
+    - String especialidad;
+    - String telefono;
+    - String correo;
+    - List<Cita> citasAsignadas;
+    - String horarioAtencion;
+    + atenderCita(Cita cita);
+    + modificarHorario(String nuevoHorario);
+    + listarCitasAsignadas();
+}
+
+class Especialidad {
+    - String nombre;
+    - String descripcion;
+    - List<Doctor> doctores;
+    + agregarDoctor(Doctor doctor);
+    + listarDoctores();
+}
+
+class Cita {
+    - int id;
+    - Paciente paciente;
+    - Doctor doctor;
+    - String fecha;
+    - String hora;
+    - String estado;
+    - String motivo;
+    + cancelarCita();
+    + modificarFecha(String nuevaFecha);
+    + confirmarCita();
+}
+
+class Administrador {
+    + agregarDoctor(Doctor doctor);
+    + eliminarUsuario(String documento);
+    + verCitas();
+    + modificarCita(int id, String nuevaFecha);
+}
+
+class Pago {
+    - String idPago;
+    - double monto;
+    - String metodo;
+    - boolean pagado;
+    - String fechaPago;
+    - Paciente paciente;
+    + procesarPago();
+    + generarRecibo();
+    + verificarEstadoPago();
+}
+
+class Notificacion {
+    - String mensaje;
+    - Usuario destinatario;
+    - String tipo;
+    - String fechaEnvio;
+    + enviarNotificacion();
+    + programarNotificacion(String fecha);
+}
+
+class SistemaEPS {
+    - List<Usuario> usuarios;
+    - List<Cita> citas;
+    - List<Pago> pagos;
+    - static String ARCHIVO_JSON;
+    + agregarUsuario(Usuario usuario);
+    + agregarCita(Cita cita);
+    + eliminarCita(int id);
+    + registrarPago(Pago pago);
+    + generarReporteCitas();
+    + guardarDatos();
+    + cargarDatos();
+}
+
+class ArchivoJSON {
+    + static guardarDatos(List<Usuario> usuarios, List<Cita> citas, List<Pago> pagos);
+    + static cargarDatos() : List<Usuario>, List<Cita>, List<Pago>;
+}
+
+Paciente --|> Usuario : "hereda";
+Doctor --|> Usuario : "hereda";
+Administrador --|> Usuario : "hereda";
+
+Paciente "1" -- "*" Cita : "Solicita";
+Doctor "1" -- "*" Cita : "Atiende";
+Paciente "1" -- "1" HistoriaClinica : "Posee";
+HistoriaClinica "1" -- "*" Cita : "Registra";
+Administrador "1" -- "*" Doctor : "Administra";
+Administrador "1" -- "*" Usuario : "Gestiona";
+
+SistemaEPS "1" -- "*" Usuario : "Guarda";
+SistemaEPS "1" -- "*" Cita : "Administra";
+SistemaEPS "1" -- "1" ArchivoJSON : "Usa";
+SistemaEPS "1" -- "*" Pago : "Maneja";
+
+Pago "1" -- "*" Notificacion : "Genera";
+ArchivoJSON ..> "1" SistemaEPS : "Guarda y carga datos";
+
+@enduml
+

@@ -9,6 +9,8 @@ public class InicioSesion extends javax.swing.JFrame {
     int Xmouse, Ymouse;
     public InicioSesion() {
         initComponents();
+        setLocationRelativeTo(null);
+
     }
 
 
@@ -33,14 +35,16 @@ public class InicioSesion extends javax.swing.JFrame {
         PassTxt = new javax.swing.JPasswordField();
         EntrarBtn = new javax.swing.JPanel();
         EntrarbtnTxt = new javax.swing.JLabel();
+        EntrarbtnTxt1 = new javax.swing.JLabel();
+        EntrarbtnTxt2 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(800, 500));
         setResizable(false);
 
-        Background.setBackground(new java.awt.Color(255, 255, 255));
+        Background.setBackground(new java.awt.Color(240, 248, 255));
         Background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Logo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -57,13 +61,12 @@ public class InicioSesion extends javax.swing.JFrame {
         Favicon.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
         Favicon.setForeground(new java.awt.Color(0, 0, 0));
         Favicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/favicon.png"))); // NOI18N
-        Favicon.setText("LOGO ");
         Background.add(Favicon, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 150, 60));
 
         City.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/city.png"))); // NOI18N
         Background.add(City, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 0, 290, 500));
 
-        Header.setBackground(new java.awt.Color(255, 255, 255));
+        Header.setBackground(new java.awt.Color(240, 248, 255));
         Header.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
                 HeaderMouseDragged(evt);
@@ -129,20 +132,20 @@ public class InicioSesion extends javax.swing.JFrame {
 
         Background.add(Header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 40));
 
+        jLabel1.setBackground(new java.awt.Color(50, 50, 50));
         jLabel1.setFont(new java.awt.Font("Roboto Medium", 0, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setForeground(new java.awt.Color(50, 50, 50));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("INICIAR SESION");
         Background.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, -1));
 
-        Userlabel.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
-        Userlabel.setForeground(new java.awt.Color(0, 0, 0));
+        Userlabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Userlabel.setForeground(new java.awt.Color(70, 70, 70));
         Userlabel.setText("USUARIO");
         Background.add(Userlabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, -1, -1));
 
-        UserTxt.setForeground(new java.awt.Color(153, 153, 153));
+        UserTxt.setForeground(new java.awt.Color(60, 60, 60));
         UserTxt.setText("Ingrese su nombre de usuario");
-        UserTxt.setBorder(null);
         UserTxt.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 UserTxtMousePressed(evt);
@@ -151,16 +154,15 @@ public class InicioSesion extends javax.swing.JFrame {
         Background.add(UserTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 350, 30));
         Background.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 390, 10));
 
-        Passwordlabel.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
-        Passwordlabel.setForeground(new java.awt.Color(0, 0, 0));
+        Passwordlabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Passwordlabel.setForeground(new java.awt.Color(70, 70, 70));
         Passwordlabel.setText("CONTRASEÑA");
         Background.add(Passwordlabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, -1, -1));
         Background.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 390, -1));
 
         PassTxt.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-        PassTxt.setForeground(new java.awt.Color(153, 153, 153));
+        PassTxt.setForeground(new java.awt.Color(60, 60, 60));
         PassTxt.setText("********");
-        PassTxt.setBorder(null);
         PassTxt.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 PassTxtMousePressed(evt);
@@ -170,9 +172,9 @@ public class InicioSesion extends javax.swing.JFrame {
 
         EntrarBtn.setBackground(new java.awt.Color(0, 134, 190));
 
-        EntrarbtnTxt.setBackground(new java.awt.Color(0, 134, 190));
-        EntrarbtnTxt.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
-        EntrarbtnTxt.setForeground(new java.awt.Color(0, 0, 0));
+        EntrarbtnTxt.setBackground(new java.awt.Color(0, 120, 215));
+        EntrarbtnTxt.setFont(new java.awt.Font("Roboto Medium", 0, 16)); // NOI18N
+        EntrarbtnTxt.setForeground(new java.awt.Color(255, 255, 255));
         EntrarbtnTxt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         EntrarbtnTxt.setText("ENTRAR");
         EntrarbtnTxt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -185,22 +187,70 @@ public class InicioSesion extends javax.swing.JFrame {
             }
         });
 
+        EntrarbtnTxt1.setBackground(new java.awt.Color(0, 134, 190));
+        EntrarbtnTxt1.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
+        EntrarbtnTxt1.setForeground(new java.awt.Color(0, 0, 0));
+        EntrarbtnTxt1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        EntrarbtnTxt1.setText("ENTRAR");
+        EntrarbtnTxt1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        EntrarbtnTxt1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                EntrarbtnTxt1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                EntrarbtnTxt1MouseExited(evt);
+            }
+        });
+
+        EntrarbtnTxt2.setBackground(new java.awt.Color(0, 134, 190));
+        EntrarbtnTxt2.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
+        EntrarbtnTxt2.setForeground(new java.awt.Color(0, 0, 0));
+        EntrarbtnTxt2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        EntrarbtnTxt2.setText("ENTRAR");
+        EntrarbtnTxt2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        EntrarbtnTxt2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                EntrarbtnTxt2MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                EntrarbtnTxt2MouseExited(evt);
+            }
+        });
+
         javax.swing.GroupLayout EntrarBtnLayout = new javax.swing.GroupLayout(EntrarBtn);
         EntrarBtn.setLayout(EntrarBtnLayout);
         EntrarBtnLayout.setHorizontalGroup(
             EntrarBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EntrarBtnLayout.createSequentialGroup()
+            .addGroup(EntrarBtnLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(EntrarbtnTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(EntrarBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(EntrarbtnTxt, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(EntrarbtnTxt1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(EntrarbtnTxt2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
         EntrarBtnLayout.setVerticalGroup(
             EntrarBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EntrarBtnLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(EntrarbtnTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(EntrarbtnTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(EntrarbtnTxt2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(EntrarbtnTxt1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         Background.add(EntrarBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, 110, 40));
+
+        jButton1.setBackground(new java.awt.Color(0, 153, 255));
+        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(0, 0, 0));
+        jButton1.setText("Registrarse");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        Background.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(368, 453, 120, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -215,35 +265,6 @@ public class InicioSesion extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void HeaderMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HeaderMousePressed
-        Xmouse = evt.getX();
-        Ymouse = evt.getY();
-    }//GEN-LAST:event_HeaderMousePressed
-
-    private void HeaderMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HeaderMouseDragged
-        int x = evt.getXOnScreen();
-        int y = evt.getYOnScreen();
-        this.setLocation(x - Xmouse, y - Ymouse);
-    }//GEN-LAST:event_HeaderMouseDragged
-
-    private void ExitTxtMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExitTxtMousePressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ExitTxtMousePressed
-
-    private void ExitTxtMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExitTxtMouseClicked
-        System.exit(0);
-    }//GEN-LAST:event_ExitTxtMouseClicked
-
-    private void ExitTxtMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExitTxtMouseEntered
-       Exitbtn.setBackground(Color.red);
-       ExitTxt.setForeground(Color.white);
-    }//GEN-LAST:event_ExitTxtMouseEntered
-
-    private void ExitTxtMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExitTxtMouseExited
-        Exitbtn.setBackground(Color.white);
-        ExitTxt.setForeground(Color.black);
-    }//GEN-LAST:event_ExitTxtMouseExited
 
     private void EntrarbtnTxtMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EntrarbtnTxtMouseEntered
         EntrarBtn.setBackground(new Color(0, 156, 233));
@@ -266,6 +287,57 @@ public class InicioSesion extends javax.swing.JFrame {
         PassTxt.setText("");
         PassTxt.setForeground(Color.black);
     }//GEN-LAST:event_PassTxtMousePressed
+
+    private void EntrarbtnTxt1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EntrarbtnTxt1MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_EntrarbtnTxt1MouseEntered
+
+    private void EntrarbtnTxt1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EntrarbtnTxt1MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_EntrarbtnTxt1MouseExited
+
+    private void EntrarbtnTxt2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EntrarbtnTxt2MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_EntrarbtnTxt2MouseEntered
+
+    private void EntrarbtnTxt2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EntrarbtnTxt2MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_EntrarbtnTxt2MouseExited
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+          new Registro().setVisible(true);
+          this.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void HeaderMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HeaderMousePressed
+        Xmouse = evt.getX();
+        Ymouse = evt.getY();
+    }//GEN-LAST:event_HeaderMousePressed
+
+    private void HeaderMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HeaderMouseDragged
+        int x = evt.getXOnScreen();
+        int y = evt.getYOnScreen();
+        this.setLocation(x - Xmouse, y - Ymouse);
+    }//GEN-LAST:event_HeaderMouseDragged
+
+    private void ExitTxtMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExitTxtMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ExitTxtMousePressed
+
+    private void ExitTxtMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExitTxtMouseExited
+        Exitbtn.setBackground(Color.white);
+        ExitTxt.setForeground(Color.black);
+    }//GEN-LAST:event_ExitTxtMouseExited
+
+    private void ExitTxtMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExitTxtMouseEntered
+        Exitbtn.setBackground(Color.red);
+        ExitTxt.setForeground(Color.white);
+    }//GEN-LAST:event_ExitTxtMouseEntered
+
+    private void ExitTxtMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExitTxtMouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_ExitTxtMouseClicked
 
     /**
      * @param args the command line arguments
@@ -307,6 +379,8 @@ public class InicioSesion extends javax.swing.JFrame {
     private javax.swing.JLabel City;
     private javax.swing.JPanel EntrarBtn;
     private javax.swing.JLabel EntrarbtnTxt;
+    private javax.swing.JLabel EntrarbtnTxt1;
+    private javax.swing.JLabel EntrarbtnTxt2;
     private javax.swing.JLabel ExitTxt;
     private javax.swing.JPanel Exitbtn;
     private javax.swing.JLabel Favicon;
@@ -317,6 +391,7 @@ public class InicioSesion extends javax.swing.JFrame {
     private javax.swing.JLabel Passwordlabel;
     private javax.swing.JTextField UserTxt;
     private javax.swing.JLabel Userlabel;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
