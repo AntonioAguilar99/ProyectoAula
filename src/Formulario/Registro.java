@@ -15,6 +15,7 @@ public class Registro extends javax.swing.JFrame {
      */
     public Registro() {
         initComponents();
+        setLocationRelativeTo(this);
     }
 
     /**
@@ -30,25 +31,30 @@ public class Registro extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtNombre = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel4 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        txtApellidos = new javax.swing.JTextField();
         jSeparator2 = new javax.swing.JSeparator();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        comboDocumento = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        txtNumDocumento = new javax.swing.JTextField();
         jSeparator3 = new javax.swing.JSeparator();
         jLabel7 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        comboTipoUsuario = new javax.swing.JComboBox<>();
         jLabel8 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        txtCorreo = new javax.swing.JTextField();
         jSeparator4 = new javax.swing.JSeparator();
         jLabel9 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
+        txtTelefono = new javax.swing.JTextField();
         jSeparator5 = new javax.swing.JSeparator();
         jPanel1 = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
+        txtContrasena = new javax.swing.JPasswordField();
+        jSeparator6 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(800, 500));
@@ -69,32 +75,32 @@ public class Registro extends javax.swing.JFrame {
         jLabel3.setText("Nombre");
         Background.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, -1, -1));
 
-        jTextField1.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(60, 60, 60));
-        jTextField1.setText("Ingrese su nombre");
-        jTextField1.setBorder(null);
-        Background.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 170, 30));
+        txtNombre.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
+        txtNombre.setForeground(new java.awt.Color(60, 60, 60));
+        txtNombre.setText("Ingrese su nombre");
+        txtNombre.setBorder(null);
+        Background.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 170, 30));
         Background.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 210, 10));
 
         jLabel4.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         jLabel4.setText("Apellidos");
         Background.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, -1, -1));
 
-        jTextField2.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
-        jTextField2.setForeground(new java.awt.Color(70, 70, 70));
-        jTextField2.setText("Ingrese su apellido");
-        jTextField2.setBorder(null);
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        txtApellidos.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
+        txtApellidos.setForeground(new java.awt.Color(70, 70, 70));
+        txtApellidos.setText("Ingrese su apellido");
+        txtApellidos.setBorder(null);
+        txtApellidos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                txtApellidosActionPerformed(evt);
             }
         });
-        Background.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, -1, 20));
+        Background.add(txtApellidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, -1, 20));
         Background.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 263, 210, 10));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "T.I", "C.C", "Cedula Extranjeria" }));
-        jComboBox1.setBorder(null);
-        Background.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 120, -1));
+        comboDocumento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "T.I", "C.C", "Cedula Extranjeria" }));
+        comboDocumento.setBorder(null);
+        Background.add(comboDocumento, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 120, -1));
 
         jLabel5.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         jLabel5.setText("Tipo de Documento");
@@ -104,47 +110,47 @@ public class Registro extends javax.swing.JFrame {
         jLabel6.setText("Numero de Documento");
         Background.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, -1, -1));
 
-        jTextField3.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
-        jTextField3.setForeground(new java.awt.Color(70, 70, 70));
-        jTextField3.setText("Ingrese su documento");
-        jTextField3.setBorder(null);
-        Background.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, 200, -1));
+        txtNumDocumento.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
+        txtNumDocumento.setForeground(new java.awt.Color(70, 70, 70));
+        txtNumDocumento.setText("Ingrese su documento");
+        txtNumDocumento.setBorder(null);
+        Background.add(txtNumDocumento, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, 200, -1));
         Background.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, 210, -1));
 
         jLabel7.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         jLabel7.setText("Tipo de usuario");
         Background.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 120, -1, -1));
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Afiliado Dependiente", "Doctor", "Administrador", " ", " ", " " }));
-        jComboBox2.setToolTipText("");
-        jComboBox2.setBorder(null);
-        Background.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 150, -1, -1));
+        comboTipoUsuario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Afiliado Dependiente", "Doctor", "Administrador", " ", " ", " " }));
+        comboTipoUsuario.setToolTipText("");
+        comboTipoUsuario.setBorder(null);
+        Background.add(comboTipoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 150, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         jLabel8.setText("Correo Electronico");
         Background.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 210, -1, -1));
 
-        jTextField4.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
-        jTextField4.setForeground(new java.awt.Color(70, 70, 70));
-        jTextField4.setText("Ingrese su Correo Electronico");
-        jTextField4.setBorder(null);
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        txtCorreo.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
+        txtCorreo.setForeground(new java.awt.Color(70, 70, 70));
+        txtCorreo.setText("Ingrese su Correo Electronico");
+        txtCorreo.setBorder(null);
+        txtCorreo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                txtCorreoActionPerformed(evt);
             }
         });
-        Background.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 240, -1, -1));
+        Background.add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 240, -1, -1));
         Background.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 260, 230, -1));
 
         jLabel9.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         jLabel9.setText("Numero de Telefono");
         Background.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 290, -1, -1));
 
-        jTextField5.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
-        jTextField5.setForeground(new java.awt.Color(70, 70, 70));
-        jTextField5.setText("Ingrese su numero de telefono");
-        jTextField5.setBorder(null);
-        Background.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 320, -1, -1));
+        txtTelefono.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
+        txtTelefono.setForeground(new java.awt.Color(70, 70, 70));
+        txtTelefono.setText("Ingrese su numero de telefono");
+        txtTelefono.setBorder(null);
+        Background.add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 320, -1, -1));
         Background.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 340, 230, 10));
 
         jPanel1.setBackground(new java.awt.Color(0, 134, 190));
@@ -162,6 +168,30 @@ public class Registro extends javax.swing.JFrame {
 
         Background.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 440, 90, 40));
 
+        jButton1.setText("Registrar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        Background.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 450, -1, -1));
+
+        jButton2.setText("volver");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        Background.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 450, -1, -1));
+
+        jLabel10.setText("Contraseña");
+        Background.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 360, -1, -1));
+
+        txtContrasena.setText("444444");
+        txtContrasena.setBorder(null);
+        Background.add(txtContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 390, 160, -1));
+        Background.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 410, 240, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -176,13 +206,23 @@ public class Registro extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void txtApellidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtApellidosActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_txtApellidosActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void txtCorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCorreoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_txtCorreoActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+           new InicioSesion().setVisible(true);
+           this.dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -221,9 +261,12 @@ public class Registro extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Background;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JComboBox<String> comboDocumento;
+    private javax.swing.JComboBox<String> comboTipoUsuario;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -238,10 +281,12 @@ public class Registro extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
+    private javax.swing.JSeparator jSeparator6;
+    private javax.swing.JTextField txtApellidos;
+    private javax.swing.JPasswordField txtContrasena;
+    private javax.swing.JTextField txtCorreo;
+    private javax.swing.JTextField txtNombre;
+    private javax.swing.JTextField txtNumDocumento;
+    private javax.swing.JTextField txtTelefono;
     // End of variables declaration//GEN-END:variables
 }

@@ -37,6 +37,8 @@ public class InicioSesion extends javax.swing.JFrame {
         EntrarbtnTxt = new javax.swing.JLabel();
         EntrarbtnTxt1 = new javax.swing.JLabel();
         EntrarbtnTxt2 = new javax.swing.JLabel();
+        EntrarbtnTxt3 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -185,6 +187,15 @@ public class InicioSesion extends javax.swing.JFrame {
         EntrarbtnTxt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         EntrarbtnTxt.setText("ENTRAR");
         EntrarbtnTxt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        EntrarbtnTxt.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                EntrarbtnTxtAncestorAdded(evt);
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
         EntrarbtnTxt.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 EntrarbtnTxtMouseEntered(evt);
@@ -222,6 +233,21 @@ public class InicioSesion extends javax.swing.JFrame {
             }
         });
 
+        EntrarbtnTxt3.setBackground(new java.awt.Color(0, 120, 215));
+        EntrarbtnTxt3.setFont(new java.awt.Font("Roboto Medium", 0, 16)); // NOI18N
+        EntrarbtnTxt3.setForeground(new java.awt.Color(255, 255, 255));
+        EntrarbtnTxt3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        EntrarbtnTxt3.setText("ENTRAR");
+        EntrarbtnTxt3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        EntrarbtnTxt3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                EntrarbtnTxt3MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                EntrarbtnTxt3MouseExited(evt);
+            }
+        });
+
         javax.swing.GroupLayout EntrarBtnLayout = new javax.swing.GroupLayout(EntrarBtn);
         EntrarBtn.setLayout(EntrarBtnLayout);
         EntrarBtnLayout.setHorizontalGroup(
@@ -231,7 +257,8 @@ public class InicioSesion extends javax.swing.JFrame {
                 .addGroup(EntrarBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(EntrarbtnTxt, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(EntrarbtnTxt1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(EntrarbtnTxt2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(EntrarbtnTxt2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(EntrarbtnTxt3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
         EntrarBtnLayout.setVerticalGroup(
             EntrarBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -239,12 +266,22 @@ public class InicioSesion extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(EntrarbtnTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(EntrarbtnTxt3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(EntrarbtnTxt2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(EntrarbtnTxt1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         Background.add(EntrarBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, 110, 40));
+
+        jButton1.setText("Registro");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        Background.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 440, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -343,6 +380,24 @@ public class InicioSesion extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_UserTxtFocusGained
 
+    private void EntrarbtnTxt3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EntrarbtnTxt3MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_EntrarbtnTxt3MouseEntered
+
+    private void EntrarbtnTxt3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EntrarbtnTxt3MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_EntrarbtnTxt3MouseExited
+
+    private void EntrarbtnTxtAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_EntrarbtnTxtAncestorAdded
+        // TODO add your handling code here:
+    }//GEN-LAST:event_EntrarbtnTxtAncestorAdded
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        new Registro().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -385,6 +440,7 @@ public class InicioSesion extends javax.swing.JFrame {
     private javax.swing.JLabel EntrarbtnTxt;
     private javax.swing.JLabel EntrarbtnTxt1;
     private javax.swing.JLabel EntrarbtnTxt2;
+    private javax.swing.JLabel EntrarbtnTxt3;
     private javax.swing.JLabel ExitTxt;
     private javax.swing.JPanel Exitbtn;
     private javax.swing.JLabel Favicon;
@@ -395,6 +451,7 @@ public class InicioSesion extends javax.swing.JFrame {
     private javax.swing.JLabel Passwordlabel;
     private javax.swing.JTextField UserTxt;
     private javax.swing.JLabel Userlabel;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
