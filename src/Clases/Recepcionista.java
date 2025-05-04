@@ -4,37 +4,22 @@
  */
 package Clases;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  *
  * @author anton
  */
-import java.util.List;
 import java.util.Date;
 
-public class Doctor extends Persona {
-    private String especialidad;
+public class Recepcionista extends Persona {
 
     // Métodos específicos
-    public List<Cita> verCitas() {
-        // Retornar la lista de citas del doctor
+    public Cita registrarCita(Afiliado afiliado, Doctor doctor, Date fecha) {
+        // Registrar una cita para el afiliado con el doctor en la fecha indicada
         return null;
     }
 
-    public boolean estaDisponible(Date fecha) {
-        // Verificar si el doctor está disponible en la fecha indicada
-        return false;
-    }
-
-    // Getters y Setters
-    public String getEspecialidad() {
-        return especialidad;
-    }
-
-    public void setEspecialidad(String especialidad) {
-        this.especialidad = especialidad;
+    public void cancelarCita(Cita cita) {
+        // Cancelar la cita
     }
 
     @Override
@@ -48,3 +33,4 @@ public class Doctor extends Persona {
         return false;
     }
 }
+

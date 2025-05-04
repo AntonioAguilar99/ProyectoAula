@@ -16,6 +16,9 @@ public class Registro extends javax.swing.JFrame {
     public Registro() {
         initComponents();
         setLocationRelativeTo(this);
+        labelEspecialidad.setVisible(false);  // Ocultar el JLabel de especialidad
+        textFieldEspecialidad.setVisible(false);  // Ocultar el JTextField de especialidad
+        jSeparator7.setVisible(false);
     }
 
     /**
@@ -49,12 +52,14 @@ public class Registro extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         txtTelefono = new javax.swing.JTextField();
         jSeparator5 = new javax.swing.JSeparator();
-        jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
         txtContrasena = new javax.swing.JPasswordField();
         jSeparator6 = new javax.swing.JSeparator();
+        labelEspecialidad = new javax.swing.JLabel();
+        textFieldEspecialidad = new javax.swing.JTextField();
+        jSeparator7 = new javax.swing.JSeparator();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(800, 500));
@@ -72,30 +77,30 @@ public class Registro extends javax.swing.JFrame {
         Background.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
-        jLabel3.setText("Nombre");
-        Background.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, -1, -1));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/nombre.png"))); // NOI18N
+        jLabel3.setText("Nombres");
+        Background.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, -1));
 
         txtNombre.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
         txtNombre.setForeground(new java.awt.Color(60, 60, 60));
-        txtNombre.setText("Ingrese su nombre");
         txtNombre.setBorder(null);
-        Background.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 170, 30));
+        Background.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 210, 30));
         Background.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 210, 10));
 
         jLabel4.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/nombre.png"))); // NOI18N
         jLabel4.setText("Apellidos");
-        Background.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, -1, -1));
+        Background.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, -1, -1));
 
         txtApellidos.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
         txtApellidos.setForeground(new java.awt.Color(70, 70, 70));
-        txtApellidos.setText("Ingrese su apellido");
         txtApellidos.setBorder(null);
         txtApellidos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtApellidosActionPerformed(evt);
             }
         });
-        Background.add(txtApellidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, -1, 20));
+        Background.add(txtApellidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 210, 20));
         Background.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 263, 210, 10));
 
         comboDocumento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "T.I", "C.C", "Cedula Extranjeria" }));
@@ -103,94 +108,96 @@ public class Registro extends javax.swing.JFrame {
         Background.add(comboDocumento, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 120, -1));
 
         jLabel5.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/carne-de-identidad.png"))); // NOI18N
         jLabel5.setText("Tipo de Documento");
         Background.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/carpeta.png"))); // NOI18N
         jLabel6.setText("Numero de Documento");
-        Background.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, -1, -1));
+        Background.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, -1, -1));
 
         txtNumDocumento.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
         txtNumDocumento.setForeground(new java.awt.Color(70, 70, 70));
-        txtNumDocumento.setText("Ingrese su documento");
         txtNumDocumento.setBorder(null);
-        Background.add(txtNumDocumento, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, 200, -1));
-        Background.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, 210, -1));
+        Background.add(txtNumDocumento, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, 200, -1));
+        Background.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 430, 210, 10));
 
         jLabel7.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/hombre.png"))); // NOI18N
         jLabel7.setText("Tipo de usuario");
-        Background.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 120, -1, -1));
+        Background.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 110, -1, -1));
 
-        comboTipoUsuario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Afiliado Dependiente", "Doctor", "Administrador", " ", " ", " " }));
+        comboTipoUsuario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Afiliado ", "Doctor", "Reccesionista", "Funcionario", " ", " ", " ", " " }));
         comboTipoUsuario.setToolTipText("");
         comboTipoUsuario.setBorder(null);
+        comboTipoUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboTipoUsuarioActionPerformed(evt);
+            }
+        });
         Background.add(comboTipoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 150, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/correo-electronico-confidencial.png"))); // NOI18N
         jLabel8.setText("Correo Electronico");
-        Background.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 210, -1, -1));
+        Background.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 200, -1, -1));
 
         txtCorreo.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
         txtCorreo.setForeground(new java.awt.Color(70, 70, 70));
-        txtCorreo.setText("Ingrese su Correo Electronico");
         txtCorreo.setBorder(null);
         txtCorreo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCorreoActionPerformed(evt);
             }
         });
-        Background.add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 240, -1, -1));
+        Background.add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 240, 230, -1));
         Background.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 260, 230, -1));
 
         jLabel9.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/telefono-movil.png"))); // NOI18N
         jLabel9.setText("Numero de Telefono");
         Background.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 290, -1, -1));
 
         txtTelefono.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
         txtTelefono.setForeground(new java.awt.Color(70, 70, 70));
-        txtTelefono.setText("Ingrese su numero de telefono");
         txtTelefono.setBorder(null);
-        Background.add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 320, -1, -1));
+        Background.add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 320, 230, -1));
         Background.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 340, 230, 10));
 
-        jPanel1.setBackground(new java.awt.Color(0, 134, 190));
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/salida.png"))); // NOI18N
+        jButton2.setText("Salir");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        Background.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 470, -1, -1));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 90, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-        );
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/seguro.png"))); // NOI18N
+        jLabel10.setText("Contraseña");
+        Background.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 370, -1, -1));
 
-        Background.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 440, 90, 40));
+        txtContrasena.setBorder(null);
+        Background.add(txtContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 410, 240, -1));
+        Background.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 430, 240, 10));
 
+        labelEspecialidad.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/medical-staff.png"))); // NOI18N
+        labelEspecialidad.setText("Especialidad");
+        Background.add(labelEspecialidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 110, -1, -1));
+
+        textFieldEspecialidad.setBorder(null);
+        Background.add(textFieldEspecialidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 150, 140, -1));
+        Background.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 170, 140, -1));
+
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/machine.png"))); // NOI18N
         jButton1.setText("Registrar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        Background.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 450, -1, -1));
-
-        jButton2.setText("volver");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-        Background.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 450, -1, -1));
-
-        jLabel10.setText("Contraseña");
-        Background.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 360, -1, -1));
-
-        txtContrasena.setText("444444");
-        txtContrasena.setBorder(null);
-        Background.add(txtContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 390, 160, -1));
-        Background.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 410, 240, -1));
+        Background.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 470, 137, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -200,7 +207,7 @@ public class Registro extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(Background, javax.swing.GroupLayout.DEFAULT_SIZE, 547, Short.MAX_VALUE)
         );
 
         pack();
@@ -223,6 +230,22 @@ public class Registro extends javax.swing.JFrame {
            new InicioSesion().setVisible(true);
            this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void comboTipoUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboTipoUsuarioActionPerformed
+        // TODO add your handling code here:
+            // Verificar si el tipo de usuario seleccionado es "Doctor"
+        String tipoSeleccionado = (String) comboTipoUsuario.getSelectedItem();
+        
+        if ("Doctor".equals(tipoSeleccionado)) {
+            labelEspecialidad.setVisible(true);  // Hacer visible el label y textfield de especialidad
+            textFieldEspecialidad.setVisible(true);
+            jSeparator7.setVisible(true);
+        } else {
+            labelEspecialidad.setVisible(false);  // Ocultar el label y textfield de especialidad
+            textFieldEspecialidad.setVisible(false);
+            jSeparator7.setVisible(false);
+        }
+    }//GEN-LAST:event_comboTipoUsuarioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -275,13 +298,15 @@ public class Registro extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSeparator jSeparator6;
+    private javax.swing.JSeparator jSeparator7;
+    private javax.swing.JLabel labelEspecialidad;
+    private javax.swing.JTextField textFieldEspecialidad;
     private javax.swing.JTextField txtApellidos;
     private javax.swing.JPasswordField txtContrasena;
     private javax.swing.JTextField txtCorreo;
