@@ -128,7 +128,7 @@ public class Registro extends javax.swing.JFrame {
         jLabel7.setText("Tipo de usuario");
         Background.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 110, -1, -1));
 
-        comboTipoUsuario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Afiliado ", "Doctor", "Reccesionista", "Funcionario", " ", " ", " ", " " }));
+        comboTipoUsuario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Afiliado ", "Doctor", "Recepsionista", "Funcionario", " ", " ", " ", " " }));
         comboTipoUsuario.setToolTipText("");
         comboTipoUsuario.setBorder(null);
         comboTipoUsuario.addActionListener(new java.awt.event.ActionListener() {

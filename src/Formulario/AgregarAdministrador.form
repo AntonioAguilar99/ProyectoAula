@@ -158,9 +158,9 @@
                       <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jTextField5" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jTextField6" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTextField5" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
@@ -254,7 +254,7 @@
                 <StringItem index="0" value="Seleccionar"/>
                 <StringItem index="1" value="Afiliado "/>
                 <StringItem index="2" value="Doctor"/>
-                <StringItem index="3" value="Reccesionista"/>
+                <StringItem index="3" value="Recepsionista"/>
                 <StringItem index="4" value="Funcionario"/>
               </StringArray>
             </Property>
