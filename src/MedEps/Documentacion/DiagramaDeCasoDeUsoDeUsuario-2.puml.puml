@@ -1,0 +1,62 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+
+actor Usuario as User
+actor Doctor as Doc
+actor Administrador as Admin
+actor Farmaceutico as Pharma
+
+package "Modulo Usuario" {
+  User --> (Registrarse)
+  User --> (Iniciar sesión)
+  User --> (Actualizar datos personales)
+  
+  User --> (Gestionar citas médicas) 
+  (Gestionar citas médicas) --> (Consultar citas médicas)
+  (Gestionar citas médicas) --> (Registrar cita médica)
+  (Gestionar citas médicas) --> (Modificar cita médica)
+  (Gestionar citas médicas) --> (Cancelar cita médica)
+  (Gestionar citas médicas) --> (Ver historial de citas)
+  
+  User --> (Consultar estado de afiliación)
+  User --> (Solicitar cambio de médico)
+  User --> (Consultar resultados de exámenes)
+  
+  User --> (Solicitar medicamentos)
+  User --> (Consultar estado de autorizaciones)
+  User --> (Descargar fórmula médica)
+}
+
+package "Modulo Doctor" {
+  Doc --> (Iniciar sesión)
+  Doc --> (Ver citas asignadas)
+  Doc --> (Consultar historia clínica del paciente)
+  Doc --> (Registrar evolución médica)
+  Doc --> (Registrar incapacidad)
+  Doc --> (Generar remisión o autorización)
+  Doc --> (Subir resultados de exámenes)
+  Doc --> (Marcar cita como atendida)
+}
+
+package "Modulo Administrador" {
+  Admin --> (Iniciar sesión)
+  
+  Admin --> (Gestionar usuarios)
+  Admin --> (Gestionar doctores)
+  
+  Admin --> (Gestionar citas médicas) 
+  (Gestionar citas médicas) --> (Asignar citas automáticamente)
+  (Gestionar citas médicas) --> (Cancelar citas masivamente)
+  
+  Admin --> (Visualizar estadísticas del sistema)
+  Admin --> (Generar reportes)
+  Admin --> (Configurar parámetros del sistema)
+}
+
+package "Modulo Farmacia y Autorizaciones" {
+  Pharma --> (Gestionar entrega de medicamentos)
+  Pharma --> (Ver historial de medicamentos por paciente)
+}
+@enduml
+

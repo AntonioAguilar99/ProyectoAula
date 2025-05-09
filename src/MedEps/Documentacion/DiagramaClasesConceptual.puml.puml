@@ -1,0 +1,114 @@
+@startuml
+
+' Clase base Usuario
+class Usuario {
+    # String codigo
+    # String nombres
+    # String apellidos
+    # String tipoDocumento
+    # String numeroDocumento
+    # String correo
+    # String telefono
+    # String contrasena
+    # RolUsuarioEnum
+
+' Subclases
+class Paciente {
+    - Date fechaNacimiento
+    - String genero
+    - List<Cita> citas
+}
+
+class Doctor {
+    - String especialidad
+    - String numeroLicencia
+    - List<Cita> citas
+    - List<HistoriaClinica> historiasClinicas
+}
+
+class Administrador {
+    + void asignarCitas()
+    + void cancelarCitas()
+    + void generarReportes()
+}
+
+class Farmaceutico {
+    - List<EntregaMedicamento> entregas
+}
+
+Usuario <|-- Paciente
+Usuario <|-- Doctor
+Usuario <|-- Administrador
+Usuario <|-- Farmaceutico
+
+' Clase Cita
+class Cita {
+    - Date fecha
+    - String hora
+    - String motivo
+    - String estado
+    - Paciente paciente
+    - Doctor doctor
+}
+
+Paciente "1" --> "many" Cita
+Doctor "1" --> "many" Cita
+
+' Historia clínica y relaciones
+class HistoriaClinica {
+    - Paciente paciente
+    - List<EvolucionMedica> evoluciones
+    - List<Incapacidad> incapacidades
+    - List<Autorizacion> autorizaciones
+}
+
+class EvolucionMedica {
+    - Doctor doctor
+    - Date fecha
+    - String descripcion
+}
+
+class Incapacidad {
+    - Doctor doctor
+    - Date fechaInicio
+    - int dias
+    - String motivo
+}
+
+class Autorizacion {
+    - String tipo
+    - String estado
+}
+
+class Medicamento {
+    - String nombre
+    - String dosis
+    - String viaAdministracion
+}
+
+class EntregaMedicamento {
+    - Paciente paciente
+    - Medicamento medicamento
+    - Date fechaEntrega
+}
+
+Paciente --> HistoriaClinica
+HistoriaClinica --> EvolucionMedica
+HistoriaClinica --> Incapacidad
+HistoriaClinica --> Autorizacion
+
+Farmaceutico --> EntregaMedicamento
+EntregaMedicamento --> Medicamento
+EntregaMedicamento --> Paciente
+
+class RolUsuarioEnum{
+ ADMINISTRADOR
+ PACIENTE
+ DOCTOR
+}
+
+@enduml
+
+
+
+}

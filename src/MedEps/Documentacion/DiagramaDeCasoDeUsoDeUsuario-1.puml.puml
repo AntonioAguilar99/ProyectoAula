@@ -1,0 +1,73 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+skinparam backgroundColor #F9F9F9
+skinparam usecase {
+  BackgroundColor #E3F2FD
+  BorderColor #1E88E5
+  ArrowColor #1565C0
+  FontColor #0D47A1
+}
+skinparam actor {
+  BackgroundColor #FFF3E0
+  BorderColor #FB8C00
+  FontColor #EF6C00
+}
+skinparam package {
+  BackgroundColor #E8F5E9
+  BorderColor #388E3C
+  FontColor #1B5E20
+}
+
+actor Usuario as U #FF9800
+actor Doctor as D #4CAF50
+actor Administrador as A #2196F3
+actor Farmaceutico as F #9C27B0
+
+package "🎯 Módulo Usuario" {
+  U --> (Registrarse)
+  U --> (Iniciar sesión)
+  U --> (Actualizar datos personales)
+  U --> (Consultar citas médicas)
+  U --> (Registrar cita médica)
+  U --> (Modificar cita médica)
+  U --> (Cancelar cita médica)
+  U --> (Filtrar citas por fecha)
+  U --> (Filtrar citas por especialidad)
+  U --> (Ver historial de citas)
+  U --> (Consultar estado de afiliación)
+  U --> (Solicitar cambio de médico)
+  U --> (Consultar resultados de exámenes)
+  U --> (Solicitar medicamentos)
+  U --> (Consultar estado de autorizaciones)
+  U --> (Descargar fórmula médica)
+}
+
+package "🩺 Módulo Doctor" {
+  D --> (Iniciar sesión)
+  D --> (Ver citas asignadas)
+  D --> (Consultar historia clínica del paciente)
+  D --> (Registrar evolución médica)
+  D --> (Registrar incapacidad)
+  D --> (Generar remisión o autorización)
+  D --> (Subir resultados de exámenes)
+  D --> (Marcar cita como atendida)
+}
+
+package "⚙️ Módulo Administrador" {
+  A --> (Iniciar sesión)
+  A --> (Gestionar usuarios)
+  A --> (Gestionar doctores)
+  A --> (Asignar citas automáticamente)
+  A --> (Cancelar citas masivamente)
+  A --> (Visualizar estadísticas del sistema)
+  A --> (Generar reportes)
+  A --> (Configurar parámetros del sistema)
+}
+
+package "💊 Módulo Farmacia" {
+  F --> (Gestionar entrega de medicamentos)
+  F --> (Ver historial de medicamentos por paciente)
+}
+@enduml
+

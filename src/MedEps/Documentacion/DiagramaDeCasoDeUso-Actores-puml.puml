@@ -1,0 +1,5 @@
+@startuml
+:Usuario: as User
+:Administrador: as Admin
+:Doctor: as Doc
+@enduml

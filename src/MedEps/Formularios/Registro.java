@@ -2,14 +2,24 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package Formulario;
+package MedEps.Formularios;
+
+
+import MedEps.Modelo.Entidades.Enumeraciones.RolUsuarioEnum;
+import MedEps.Modelo.Entidades.Usuario;
+import java.sql.SQLException;
+import java.util.UUID;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Dylan
  */
 public class Registro extends javax.swing.JFrame {
-
+        
     /**
      * Creates new form Registro
      */
@@ -34,18 +44,18 @@ public class Registro extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        txtNombre = new javax.swing.JTextField();
+        txtNombres = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel4 = new javax.swing.JLabel();
         txtApellidos = new javax.swing.JTextField();
         jSeparator2 = new javax.swing.JSeparator();
-        comboDocumento = new javax.swing.JComboBox<>();
+        cmbTipoDocumento = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        txtNumDocumento = new javax.swing.JTextField();
+        txtNumeroDocumento = new javax.swing.JTextField();
         jSeparator3 = new javax.swing.JSeparator();
         jLabel7 = new javax.swing.JLabel();
-        comboTipoUsuario = new javax.swing.JComboBox<>();
+        cmbRol = new javax.swing.JComboBox<>();
         jLabel8 = new javax.swing.JLabel();
         txtCorreo = new javax.swing.JTextField();
         jSeparator4 = new javax.swing.JSeparator();
@@ -81,10 +91,10 @@ public class Registro extends javax.swing.JFrame {
         jLabel3.setText("Nombres");
         Background.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, -1));
 
-        txtNombre.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
-        txtNombre.setForeground(new java.awt.Color(60, 60, 60));
-        txtNombre.setBorder(null);
-        Background.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 210, 30));
+        txtNombres.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
+        txtNombres.setForeground(new java.awt.Color(60, 60, 60));
+        txtNombres.setBorder(null);
+        Background.add(txtNombres, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 210, 30));
         Background.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 210, 10));
 
         jLabel4.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
@@ -103,9 +113,9 @@ public class Registro extends javax.swing.JFrame {
         Background.add(txtApellidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 210, 20));
         Background.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 263, 210, 10));
 
-        comboDocumento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "T.I", "C.C", "Cedula Extranjeria" }));
-        comboDocumento.setBorder(null);
-        Background.add(comboDocumento, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 120, -1));
+        cmbTipoDocumento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "T.I", "C.C", "Cedula Extranjeria" }));
+        cmbTipoDocumento.setBorder(null);
+        Background.add(cmbTipoDocumento, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 120, -1));
 
         jLabel5.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/carne-de-identidad.png"))); // NOI18N
@@ -117,10 +127,10 @@ public class Registro extends javax.swing.JFrame {
         jLabel6.setText("Numero de Documento");
         Background.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, -1, -1));
 
-        txtNumDocumento.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
-        txtNumDocumento.setForeground(new java.awt.Color(70, 70, 70));
-        txtNumDocumento.setBorder(null);
-        Background.add(txtNumDocumento, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, 200, -1));
+        txtNumeroDocumento.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
+        txtNumeroDocumento.setForeground(new java.awt.Color(70, 70, 70));
+        txtNumeroDocumento.setBorder(null);
+        Background.add(txtNumeroDocumento, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, 200, -1));
         Background.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 430, 210, 10));
 
         jLabel7.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
@@ -128,15 +138,15 @@ public class Registro extends javax.swing.JFrame {
         jLabel7.setText("Tipo de usuario");
         Background.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 110, -1, -1));
 
-        comboTipoUsuario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Afiliado ", "Doctor", "Recepsionista", "Funcionario", " ", " ", " ", " " }));
-        comboTipoUsuario.setToolTipText("");
-        comboTipoUsuario.setBorder(null);
-        comboTipoUsuario.addActionListener(new java.awt.event.ActionListener() {
+        cmbRol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "ADMINISTRADOR", "DOCTOR", "PACIENTE", " ", " ", " ", " ", " " }));
+        cmbRol.setToolTipText("");
+        cmbRol.setBorder(null);
+        cmbRol.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                comboTipoUsuarioActionPerformed(evt);
+                cmbRolActionPerformed(evt);
             }
         });
-        Background.add(comboTipoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 150, -1, -1));
+        Background.add(cmbRol, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 150, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/correo-electronico-confidencial.png"))); // NOI18N
@@ -222,7 +232,55 @@ public class Registro extends javax.swing.JFrame {
     }//GEN-LAST:event_txtCorreoActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+// Crear el EntityManager desde la unidad de persistencia
+    EntityManagerFactory emf = Persistence.createEntityManagerFactory("ConfiguracionBd");
+    EntityManager em = emf.createEntityManager();
 
+    try {
+        Usuario usuario = new Usuario();
+
+        // Generar un código único (UUID como identificador)
+        usuario.setCodigo(UUID.randomUUID().toString());
+
+        // Asignar los valores de los campos
+        usuario.setNombres(txtNombres.getText().trim());
+        usuario.setApellidos(txtApellidos.getText().trim());
+        usuario.setTipoDocumento(cmbTipoDocumento.getSelectedItem().toString());
+        usuario.setNumeroDocumento(txtNumeroDocumento.getText().trim());
+        usuario.setCorreo(txtCorreo.getText().trim());
+        usuario.setTelefono(txtTelefono.getText().trim());
+        usuario.setContrasena(txtContrasena.getText().trim());
+
+        // Obtener el rol seleccionado del combo y convertirlo al enum
+        String rolSeleccionado = cmbRol.getSelectedItem().toString().toUpperCase();
+
+        try {
+            usuario.setRol(RolUsuarioEnum.valueOf(rolSeleccionado));
+        } catch (IllegalArgumentException ex) {
+            JOptionPane.showMessageDialog(null, "Rol inválido: " + rolSeleccionado);
+            return;
+        }
+
+        // Persistir en la base de datos
+        em.getTransaction().begin();
+        em.persist(usuario);
+        em.getTransaction().commit();
+
+        JOptionPane.showMessageDialog(null, "Registro exitoso");
+         limpiarCampos(); // Limpiar los campos después del registro exitoso
+    } catch (Exception e) {
+        if (em.getTransaction().isActive()) {
+            em.getTransaction().rollback();
+        }
+        e.printStackTrace();
+        JOptionPane.showMessageDialog(null, "Error al registrar: " + e.getMessage());
+    } finally {
+        em.close();
+        emf.close();
+    }
+    
+
+    
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -231,21 +289,11 @@ public class Registro extends javax.swing.JFrame {
            this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void comboTipoUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboTipoUsuarioActionPerformed
+    private void cmbRolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbRolActionPerformed
         // TODO add your handling code here:
             // Verificar si el tipo de usuario seleccionado es "Doctor"
-        String tipoSeleccionado = (String) comboTipoUsuario.getSelectedItem();
-        
-        if ("Doctor".equals(tipoSeleccionado)) {
-            labelEspecialidad.setVisible(true);  // Hacer visible el label y textfield de especialidad
-            textFieldEspecialidad.setVisible(true);
-            jSeparator7.setVisible(true);
-        } else {
-            labelEspecialidad.setVisible(false);  // Ocultar el label y textfield de especialidad
-            textFieldEspecialidad.setVisible(false);
-            jSeparator7.setVisible(false);
-        }
-    }//GEN-LAST:event_comboTipoUsuarioActionPerformed
+      
+    }//GEN-LAST:event_cmbRolActionPerformed
 
     /**
      * @param args the command line arguments
@@ -284,8 +332,8 @@ public class Registro extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Background;
-    private javax.swing.JComboBox<String> comboDocumento;
-    private javax.swing.JComboBox<String> comboTipoUsuario;
+    private javax.swing.JComboBox<String> cmbRol;
+    private javax.swing.JComboBox<String> cmbTipoDocumento;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
@@ -310,8 +358,23 @@ public class Registro extends javax.swing.JFrame {
     private javax.swing.JTextField txtApellidos;
     private javax.swing.JPasswordField txtContrasena;
     private javax.swing.JTextField txtCorreo;
-    private javax.swing.JTextField txtNombre;
-    private javax.swing.JTextField txtNumDocumento;
+    private javax.swing.JTextField txtNombres;
+    private javax.swing.JTextField txtNumeroDocumento;
     private javax.swing.JTextField txtTelefono;
     // End of variables declaration//GEN-END:variables
+
+
+
+    private void limpiarCampos() {
+    txtNombres.setText("");
+    txtApellidos.setText("");
+    cmbTipoDocumento.setSelectedIndex(0); // Asume que el primer ítem es la opción por defecto
+    txtNumeroDocumento.setText("");
+    txtCorreo.setText("");
+    txtTelefono.setText("");
+    txtContrasena.setText("");
+    cmbRol.setSelectedIndex(0); // Asume que el primer ítem es la opción por defecto
+    }
 }
+
+
